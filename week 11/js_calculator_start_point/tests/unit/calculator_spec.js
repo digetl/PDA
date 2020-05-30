@@ -37,4 +37,13 @@ describe('calculator', function () {
     assert.strictEqual(15, calculator.runningTotal);
   })
 
+  it('should divde 1 number by another', function(){
+    calculator.numberClick(2);
+    calculator.numberClick(1);
+    calculator.operatorClick("/");
+    calculator.numberClick(7);
+    calculator.operatorClick("=");
+    assert.strictEqual(3, calculator.runningTotal);
+  })
+
 });
