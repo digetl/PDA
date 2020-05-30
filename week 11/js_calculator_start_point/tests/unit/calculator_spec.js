@@ -46,13 +46,24 @@ describe('calculator', function () {
     assert.strictEqual(3, calculator.runningTotal);
   })
 
-  it('should cocatonate numbers', function(){
-    calculator.numberClick(2);
-    calculator.numberClick(1);
-    calculator.operatorClick("/");
+  it('should concatonate numbers', function(){
+    calculator.numberClick(4);
+    calculator.numberClick(3);
+    calculator.operatorClick("+");
     calculator.numberClick(7);
     calculator.operatorClick("=");
-    assert.strictEqual(3, calculator.runningTotal);
+    assert.strictEqual(50, calculator.runningTotal);
+  })
+
+  it('should chain multiple instructions togteher', function(){
+    calculator.numberClick(4);
+    calculator.operatorClick("+");
+    calculator.numberClick(7);
+    calculator.operatorClick("*");
+    calculator.numberClick(3);
+    calculator.operatorClick("=");
+    assert.strictEqual(33, calculator.runningTotal);
+
   })
 
 });
