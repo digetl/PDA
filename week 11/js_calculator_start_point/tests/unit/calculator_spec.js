@@ -46,4 +46,13 @@ describe('calculator', function () {
     assert.strictEqual(3, calculator.runningTotal);
   })
 
+  it('should cocatonate numbers', function(){
+    calculator.numberClick(2);
+    calculator.numberClick(1);
+    calculator.operatorClick("/");
+    calculator.numberClick(7);
+    calculator.operatorClick("=");
+    assert.strictEqual(3, calculator.runningTotal);
+  })
+
 });
