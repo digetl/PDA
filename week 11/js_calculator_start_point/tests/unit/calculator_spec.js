@@ -29,4 +29,12 @@ describe('calculator', function () {
     assert.strictEqual(3, calculator.runningTotal);
   })
 
+  it('sho9uld multiply 2 numbers', function(){
+    calculator.numberClick(3);
+    calculator.operatorClick("*");
+    calculator.numberClick(5);
+    calculator.operatorClick("=");
+    assert.strictEqual(15, calculator.runningTotal);
+  })
+
 });
