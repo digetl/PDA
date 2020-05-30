@@ -62,8 +62,22 @@ describe('calculator', function () {
     calculator.operatorClick("*");
     calculator.numberClick(3);
     calculator.operatorClick("=");
+    
     assert.strictEqual(33, calculator.runningTotal);
+  })
 
+  it('should clear the running total without affecting the calc', function(){
+    calculator.numberClick(4);
+    calculator.operatorClick("+");
+    calculator.numberClick(7);
+    calculator.operatorClick("*");
+    calculator.numberClick(3);
+    calculator.operatorClick("=");
+    calculator.numberClick(1);
+    calculator.operatorClick("+");
+    calculator.numberClick(6);
+    calculator.operatorClick("=");
+    assert.strictEqual(7, calculator.runningTotal);
   })
 
 });
